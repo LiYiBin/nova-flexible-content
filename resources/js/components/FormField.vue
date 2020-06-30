@@ -76,6 +76,12 @@ export default {
         };
     },
 
+    created() {
+        Nova.$on(this.field.attribute + '-add-group', (layout, attributes, key, collapsed) => {
+            this.addGroup(layout, attributes, key, collapsed);
+        });
+    },
+
     methods: {
         /*
          * Set the initial, internal value for the field.
